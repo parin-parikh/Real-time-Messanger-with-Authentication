@@ -26,12 +26,11 @@ function Login() {
     if(localStorage.getItem('chat-app-user')) {
       navigate('/');
     }
-  }, []);
+  });
 
   const handleSubmit = async (event) => {
     event.preventDefault();
     if(handleValidation()) {
-      console.log("WORKS");
       const { username, password } = values;
       const { data } = await axios.post(loginRoute, {
         username, 
@@ -41,9 +40,9 @@ function Login() {
       if(data.status === false) {
         toast.error(data.msg, toastOptions);
       }
-            
+      console.log(data);
       if(data.status === true) {
-        localStorage.setItem('chat-app-user', JSON.stringify(data.user));
+        localStorage.setItem('chat-app-user', JSON.stringify(data.loginUser));
         navigate("/");
       }
     }
