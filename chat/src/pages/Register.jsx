@@ -33,8 +33,6 @@ function Register() {
   const handleSubmit = async (event) => {
     event.preventDefault();
     if(handleValidation()) {
-      console.log("WORKS");
-      /* console.log("in validation", registerRoute); */
       const { email, username, password } = values;
       const { data } = await axios.post(registerRoute, {
         username, 
@@ -45,9 +43,9 @@ function Register() {
       if(data.status === false) {
         toast.error(data.msg, toastOptions);
       }
-            
       if(data.status === true) {
-        localStorage.setItem('chat-app-user', JSON.stringify(data.loginUser));
+        console.log(data);
+        localStorage.setItem('chat-app-user', JSON.stringify(data.user));
         console.log(data.user);
         navigate("/");
       }

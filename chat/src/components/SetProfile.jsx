@@ -4,11 +4,11 @@ import styled from "styled-components";
 import { useNavigate } from "react-router-dom";
 import { ToastContainer, toast } from "react-toastify"; 
 import "react-toastify/dist/ReactToastify.css";
-import { setAvatarRoute } from "../utils/APIRoutes";
+import { setProfileRoute } from "../utils/APIRoutes";
 /* import loader from "../assets/loading-gif.gif"; */
 
 
-export default function SetAvatar() {
+export default function SetProfile() {
   const navigate = useNavigate();
   const [isLoading, setIsLoading] = useState(true);
   const [selectedColor, setSelectedColor] = useState("");
@@ -20,11 +20,6 @@ export default function SetAvatar() {
     setSelectedColor(color);
   };
 
-  // Function to handle the button click
-/*   const handleButtonClick = () => {
-    
-  }; */
-
   const toastOptions = { 
     position: "top-center",
     autoClose: "5000",
@@ -33,17 +28,41 @@ export default function SetAvatar() {
     theme: "dark"
   };
 
+  useEffect(() => {
+    async function fetchData() {
+      if(!localStorage.getItem('chat-app-user')) {
+        navigate('/login');
+      }
+    }
+    fetchData();
+  }, [])
+
   const setProfilePicture = async () => {
     if(selectedColor === "") {
-      toast.error("Please select an avatar", toastOptions);
+      toast.error("Please select a colour", toastOptions);
     } else {
       const user = await JSON.parse(localStorage.getItem("chat-app-user"));
-      console.log(user);
-      console.log(`${setAvatarRoute}/${user._id}`);
-      user.isAvatarImageSet = true;
-      user.avatarImage = selectColor;
+      const {data} = axios.post(`${setProfileRoute}/${user._id}`, {
+        image: selectedColor,
+      });
+      user.profileImageSet = true;
+      user.profileImage = selectedColor;
+      /* console.log(data); */
+      /* user.profileImage = data.image; */
       localStorage.setItem("chat-app-user", JSON.stringify(user));
       navigate("/");
+      /* console.log(user);
+      console.log(`${setProfileRoute}/${user._id}`); */
+      /* user.profileImageSet = true; */
+      /* user.profileImage = selectedColor; */
+      /* localStorage.setItem("chat-app-user", JSON.stringify(user)); */
+      /* navigate("/"); */
+
+      /* if(data.isSet()) {
+        
+      } else {
+        toast.error("Error setting profile. Please try again", toastOptions);
+      } */
 
       /* const {data} = await axios.post(`${setAvatarRoute}/${user._id}`, {
         image: colorOptions[setSelectedColor],
@@ -67,7 +86,7 @@ export default function SetAvatar() {
     <>
       <Container>
         <div className="title-container">
-          <h1>Pick an Avatar as your profile picture</h1>
+          <h1>Pick a Colour as your profile picture</h1>
         </div>
         <div className="displayColors">
           {colorOptions.map(color => (
