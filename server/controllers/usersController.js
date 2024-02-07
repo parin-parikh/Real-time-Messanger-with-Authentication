@@ -43,28 +43,8 @@ module.exports.login = async (req, res, next) => {
 
 module.exports.setProfile = async (req, res, next) => {
   try {
-    /* const userId = req.params.id; // Get user ID from request parameters
-    const profileImageData = req.body.profileImage; // Get profile image data from request body
-
-    // Update user data in the database
-    const updatedUser = await User.findByIdAndUpdate(
-      userId,
-      {
-        profileImageSet: true,
-        profileImage: profileImageData
-      },
-      { new: true } // Return the updated document
-    );
-
-    // Respond with the updated user data
-    return res.json({
-      status: true,
-      user: updatedUser
-    }); */
     const userId = req.params.id;
     const profileImageData = req.body.image;
-    /* console.log(userId); */
-    /* const profileImage = req.body.image; */
     console.log(req.body);
     const userData = await User.findByIdAndUpdate(
       userId,
@@ -75,11 +55,23 @@ module.exports.setProfile = async (req, res, next) => {
       { new: true }
     );
     return res.json({
-      /* isSet: userData.profileImageSet,
-      image: userData.profileImage, */
-      /* profileImageSet: true,
-      profileImage: userData.profileImage */
-    })
+      profileImageSet: true,
+      profileImageData
+    });
+  } catch(ex) {
+    next(ex);
+  }
+}
+
+module.exports.getAllUsers = async (req, res, next) => {
+  try { 
+    const users = await User.find({ _id: { $ne: req.params.id }}).select([
+      "email", 
+      "username", 
+      "profileImage", 
+      "_id",
+    ]);
+    return res.json(users);
   } catch(ex) {
     next(ex);
   }

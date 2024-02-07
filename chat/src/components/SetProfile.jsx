@@ -47,39 +47,9 @@ export default function SetProfile() {
       });
       user.profileImageSet = true;
       user.profileImage = selectedColor;
-      /* console.log(data); */
-      /* user.profileImage = data.image; */
       localStorage.setItem("chat-app-user", JSON.stringify(user));
       navigate("/");
-      /* console.log(user);
-      console.log(`${setProfileRoute}/${user._id}`); */
-      /* user.profileImageSet = true; */
-      /* user.profileImage = selectedColor; */
-      /* localStorage.setItem("chat-app-user", JSON.stringify(user)); */
-      /* navigate("/"); */
-
-      /* if(data.isSet()) {
-        
-      } else {
-        toast.error("Error setting profile. Please try again", toastOptions);
-      } */
-
-      /* const {data} = await axios.post(`${setAvatarRoute}/${user._id}`, {
-        image: colorOptions[setSelectedColor],
-      }); */
-
-      /* const {data} = await axios.post(`${setAvatarRoute}/${user._id}`);
-      if (data.isSet) {
-        user.isAvatarImageSet = true;
-        user.avatarImage = data.image;
-        localStorage.setItem("chat-app-user", JSON.stringify(user));
-        navigate("/");
-      } else {
-        toast.error("ERROR setting avatar, Please try again", toastOptions);
-      } */
     }
-
-    /* console.log(`Selected color: ${selectedColor}`); */
   }
 
   return(
