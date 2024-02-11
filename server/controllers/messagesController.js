@@ -1,10 +1,10 @@
-const messageModel = require("../model/messageModel");
+const Messages = require("../model/messageModel");
 /* const message = require("../models/messagesModel"); */
 
 module.exports.addMessage = async (req, res, next) => {
   try {
     const { from, to, message } = req.body;
-    const data = await messageModel.create({
+    const data = await Messages.create({
         message: {text:message},
         users: [from, to],
         sender: from,

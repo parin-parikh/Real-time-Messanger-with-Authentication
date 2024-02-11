@@ -4,20 +4,19 @@ import Logout from "./logout";
 import Messages from "./Messages";
 import ChatInput from "./chatInput";
 import axios from "axios";
-import { sendMessageRoute } from "../utils/APIRoutes";
-/* 
-
-import { v4 as uuidv4 } from "uuid";
-import { sendMessageRoute, recieveMessageRoute } from "../utils/APIRoutes"; */
+import { sendMessageRoute, recieveMessageRoute } from "../utils/APIRoutes";
 
 export default function ChatContainer( {currentChat, currentUser} ) {
   const handleSendMsg = async (msg) => {
-    alert(msg);
-    /* await axios.post(sendMessageRoute, {
-      from: currentUser._id,
+    const data = await JSON.parse(
+      localStorage.getItem("chat-app-user")
+    );
+
+    await axios.post(sendMessageRoute, {
+      from: data._id,
       to: currentChat._id,
       message: msg,
-    }); */
+    });
   };
 
   return (
