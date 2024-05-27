@@ -5,7 +5,6 @@ import { useNavigate } from "react-router-dom";
 import { ToastContainer, toast } from "react-toastify"; 
 import "react-toastify/dist/ReactToastify.css";
 import { setProfileRoute } from "../utils/APIRoutes";
-/* import loader from "../assets/loading-gif.gif"; */
 
 
 export default function SetProfile() {
@@ -13,7 +12,6 @@ export default function SetProfile() {
   const [isLoading, setIsLoading] = useState(true);
   const [selectedColor, setSelectedColor] = useState("");
   const colorOptions = ['green', 'blue', 'purple', 'red', 'yellow'];
-  /* const [avatars, colorOptions] = useState([]); */
 
 
   const selectColor = (color) => {

@@ -20,9 +20,6 @@ export default function ChatContainer( { currentChat, currentUser, socket } ) {
         });
         setMessages(response.data);
       }
-      /* const data = await JSON.parse(
-        localStorage.getItem("chat-app-user")
-      ); */
     }
     getData();
   }, [currentChat]);
@@ -55,14 +52,6 @@ export default function ChatContainer( { currentChat, currentUser, socket } ) {
       });
     }
   }, []);
-
-  /* useEffect(() => {
-    if(socket.current) {
-      socket.current.on("msg-recieve", (msg) => {
-        setArrivalMessage({fromSelf: false, message: msg});
-      });
-    }
-  }, []); */
 
   useEffect(() => {
     arrivalMessage && setMessages((prev) => [...prev, arrivalMessage]);
