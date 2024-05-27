@@ -1,6 +1,6 @@
 # Chat Application with Authentication and Real-Time Messaging
 
-Welcome to our chat application! This application allows users to register, login, and engage in real-time messaging with other users. Users can also select a profile picture, send text messages, and emojis.
+Welcome to my chat application! This application allows users to register, login, and engage in real-time messaging with other users. Users can also select a profile picture, send text messages, and emojis.
 
 ## Features
 
@@ -92,6 +92,3 @@ This project utilizes several dependencies to ensure its smooth operation. Here'
 
 These dependencies ensure the functionality, security, and user experience of the chat application. They are essential components of the project and contribute to its successful operation.
 
-## Contributing
-
-Contributions are welcome! If you have any suggestions, bug reports, or feature requests, please open an issue or submit a pull request.
