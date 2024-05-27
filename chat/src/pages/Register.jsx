@@ -82,7 +82,7 @@ function Register() {
       <FormContainer>
         <form onSubmit={(event) => handleSubmit(event)}>
           <div className="brand">
-            <img src={Logo} alt="logo" />
+            {/* <img src={Logo} alt="logo" /> */}
             <h1>Chat Application</h1>
           </div>
           <input type="text" placeholder='username' name='username' onChange={e=>handleChange(e)}/>
@@ -108,7 +108,7 @@ const FormContainer = styled.div`
   justify-content: center;
   gap: 1rem;
   align-items: center;
-  background-color: #131324;
+  background-color: #45A29E;
 
   .brand {
     display: flex;
@@ -121,7 +121,7 @@ const FormContainer = styled.div`
     }
 
     h1 {
-      color: white;
+      color: #66FCF1;
       text-transform: uppercase;
     }
   }
@@ -130,27 +130,27 @@ const FormContainer = styled.div`
     display: flex;
     flex-direction: column;
     gap: 2rem;
-    background-color: #00000076;
+    background-color: #0B0C10;
     border-radius: 2rem;
     padding: 3rem 5rem;
 
     input {
       background-color: transparent;
       padding: 1rem;
-      border: 0.1rem solid #4e0eff;
+      border: 0.1rem solid #66FCF1;
       border-radius: 0.4rem;
       color: white;
       width: 100%;
       font-size: 1rem;
 
       &:focus {
-        border: 0.1rem solid #997af0;
+        border: 0.1rem solid #66FCF1;
         outline: none;
       }
     }
 
     button {
-      background-color: #997af0;
+      background-color: #45A29E;
       color: white;
       padding: 1rem 2rem;
       border: none;
@@ -162,7 +162,7 @@ const FormContainer = styled.div`
       transition: 0.5s ease-in-out;
 
       &:hover {
-        background-color: #4e0eff;
+        background-color: #1F2833;
       }
     }
 
@@ -172,7 +172,7 @@ const FormContainer = styled.div`
       text-align: center;
       
       a {
-        color: #4e0eff;
+        color: #66FCF1;
         text-decoration: none;
         font-weight: bold;
       }

@@ -83,7 +83,7 @@ const Container = styled.div`
   align-items: center;
   flex-direction: column;
   gap: 3rem;
-  background-color: #131324;
+  background-color: #45A29E;
   height: 100vh;
   width: 100vw;
 
@@ -132,12 +132,12 @@ const Container = styled.div`
     gap: 2.5rem;
 
     .selected {
-      border: 6px solid white;
+      border: 6px solid #66FCF1;
     }
   }
 
   .submit-btn {
-    background-color: #997af0;
+    background-color: #1F2833;
     color: white;
     padding: 1rem 2rem;
     border: none;
@@ -149,7 +149,7 @@ const Container = styled.div`
     transition: 0.5s ease-in-out;
 
     &:hover {
-      background-color: #4e0eff;
+      background-color: #C5C6C7;
     }
   }
 `;

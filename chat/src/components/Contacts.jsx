@@ -29,7 +29,7 @@ export default function Contacts({contacts, currentUser, changeChat}) {
         currentUserImage && currentUserName && (
             <Container>
                 <div className="brand">
-                    <img src={Logo} alt="logo" />
+                    {/* <img src={Logo} alt="logo" /> */}
                     <h3>Parin's Chat</h3>
                 </div>
                 <div className="contacts">
@@ -63,7 +63,7 @@ const Container = styled.div`
   display: grid;
   grid-template-rows: 10% 75% 15%;
   overflow: hidden;
-  background-color: #080420;
+  background-color: #1F2833;
 
   .brand {
     display: flex;
@@ -88,13 +88,13 @@ const Container = styled.div`
     &::-webkit-scrollbar {
         width: 0.2rem;
         &-thumb {
-            background-color: #ffffff39;
+            background-color: #0B0C10;
             width: 0.1rem;
             border-radius: 1rem;
         }
     }
     .contact {
-        background-color: #ffffff39;
+        background-color: #0B0C10;
         min-height: 5rem;
         width: 90%;
         cursor: pointer;
@@ -116,12 +116,12 @@ const Container = styled.div`
         }
     }
     .selected {
-        background-color: #9186f3;
+        background-color: #45A29E;
     }
   }
 
   .current-user {
-    background-color: #0d0d30;
+    background-color: #1F2833;
     display: flex;
     justify-content: center;
     align-items: center;
