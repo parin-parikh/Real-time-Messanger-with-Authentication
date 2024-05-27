@@ -92,3 +92,9 @@ This project utilizes several dependencies to ensure its smooth operation. Here'
 
 These dependencies ensure the functionality, security, and user experience of the chat application. They are essential components of the project and contribute to its successful operation.
 
+### Images 
+![alt text](https://cdn.discordapp.com/attachments/945040077455773839/1244785370026086473/Capture.PNG?ex=66566037&is=66550eb7&hm=f8b62014606886c64fee4cf6627813ac8039c209ff3d810149b997b99a66d3b5&)
+![alt text](https://cdn.discordapp.com/attachments/945040077455773839/1244785370428608612/Capture3.PNG?ex=66566037&is=66550eb7&hm=35d8afdc9e62c3450d27c8fd7e5edb7fce5c7d71eb70f529f747317c21326cc2&)
+![alt text](https://cdn.discordapp.com/attachments/945040077455773839/1244785370734788608/Capture4.PNG?ex=66566037&is=66550eb7&hm=fe78b281bbeecf5a05b57fa3e0d9ab6187da711985e2faf7b24da73977ebb421&)
+![alt text](https://cdn.discordapp.com/attachments/945040077455773839/1244785495645491210/messageApp.png?ex=66566055&is=66550ed5&hm=42209d6c09c1e29f870b3276e87a0c4143f174069ce67cce0a2912be3d6ca58e&)
+
